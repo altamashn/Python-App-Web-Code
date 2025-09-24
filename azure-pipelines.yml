@@ -5,7 +5,7 @@ pool:
   vmImage: ubuntu-lates
 
 stages:
-  - stage: 'Docker Build'
+  - stage: 'DockerBuild'
     displayName: "Building Docker Image"
     jobs: 
       - job: 'Docker_Build'
@@ -18,7 +18,7 @@ stages:
               Dockerfile: '**/Dockerfile'
               tags: 'latest'
 
-  - stage: 'Docker Push'
+  - stage: 'DockerPush'
     displayName: 'Pushing docker image to ACR'
     jobs:
       - job: 'Docker_Push'
@@ -29,7 +29,7 @@ stages:
               repository: 'demo'
               command: 'push'
               tags: 'latest'
-  - stage: 'Publish build artifacts'
+  - stage: 'PublishArtifacts'
     displayName: 'Publish Build Artifacts'
     jobs:
       - job: 'Publish_Artifacts'
