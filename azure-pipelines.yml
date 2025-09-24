@@ -13,7 +13,7 @@ stages:
           - task: Docker@2
             inputs:
               containerRegistry: 'docker-svc'
-              repository: 'demo'
+              repository: 'pythonapprepo'
               command: 'build'
               Dockerfile: '**/Dockerfile'
               tags: 'latest'
@@ -26,7 +26,7 @@ stages:
           - task: Docker@2
             inputs:
               containerRegistry: 'docker-svc'
-              repository: 'demo'
+              repository: 'pythonapprepo'
               command: 'push'
               tags: 'latest'
   - stage: 'PublishArtifacts'
