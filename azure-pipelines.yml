@@ -5,30 +5,19 @@ pool:
   vmImage: ubuntu-latest
 
 stages:
-  - stage: 'DockerBuild'
-    displayName: "Building Docker Image"
+  - stage: 'DockerBuildAndPush'
+    displayName: "Build and Push Docker Image"
     jobs: 
-      - job: 'Docker_Build'
+      - job: 'Docker_Build_Push'
         steps:
           - task: Docker@2
             inputs:
               containerRegistry: 'docker-svc'
               repository: 'pythonapprepo'
-              command: 'build'
+              command: 'buildAndPush'
               Dockerfile: '**/Dockerfile'
               tags: 'latest'
 
-  - stage: 'DockerPush'
-    displayName: 'Pushing docker image to ACR'
-    jobs:
-      - job: 'Docker_Push'
-        steps:
-          - task: Docker@2
-            inputs:
-              containerRegistry: 'docker-svc'
-              repository: 'pythonapprepo'
-              command: 'push'
-              tags: 'latest'
   - stage: 'PublishArtifacts'
     displayName: 'Publish Build Artifacts'
     jobs:
