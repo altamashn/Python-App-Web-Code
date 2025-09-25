@@ -17,27 +17,3 @@ stages:
               command: 'buildAndPush'
               Dockerfile: '**/Dockerfile'
               tags: 'latest'
-
-  - stage: 'Archive_Files'
-    displayName: 'Archive Files'
-    jobs:
-      - job: 'Archive_Files'
-        steps:
-          - task: ArchiveFiles@2
-            inputs:
-             rootFolderOrFile: '$(Build.SourcesDirectory)'
-             includeRootFolder: false
-             archiveType: 'zip'
-             archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
-             replaceExistingArchive: true
-
-  - stage: 'PublishArtifacts'
-    displayName: 'Publish Build Artifacts'
-    jobs:
-      - job: 'Publish_Artifacts'
-        steps:
-          - task: PublishBuildArtifacts@1
-            inputs:
-              PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-              ArtifactName: 'drop'
-              publishLocation: 'Container'
