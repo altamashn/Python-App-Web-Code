@@ -12,8 +12,8 @@ stages:
         steps:
           - task: Docker@2
             inputs:
-              containerRegistry: 'docker-svc'
-              repository: 'pythonapprepo'
+              containerRegistry: 'dockersvc'
+              repository: 'pythonrepo'
               command: 'buildAndPush'
               Dockerfile: '**/Dockerfile'
               tags: 'latest'
