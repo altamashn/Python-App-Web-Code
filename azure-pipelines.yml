@@ -12,7 +12,7 @@ stages:
         steps:
           - task: Docker@2
             inputs:
-              containerRegistry: 'dockersvc'
+              containerRegistry: 'dockerreg'
               repository: 'pythonrepo'
               command: 'buildAndPush'
               Dockerfile: '**/Dockerfile'
