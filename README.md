@@ -29,6 +29,20 @@ Developer 👩‍💻 → Azure Repo 📂 → Azure DevOps Build Pipeline 🛠�
 
 ---
 
+## 📂 Repositories
+
+🧑‍💻 Application Code: [This Repository]
+
+🔧 Terraform IaC: https://github.com/altamashn/Python-App-IAC
+
+---
+
+## 🖼️ Want to See Project Images?
+
+Check out detailed visuals and screenshots of the project : https://www.linkedin.com/posts/altamash-jawed-62b6231b7_python-application-devops-project-on-activity-7377757024731926529-AjLD?utm_source=share&utm_medium=member_desktop&rcm=ACoAADJ1scMB7MJ72ZupN7QeRWm6k4eZd0vk6tU
+
+---
+
 ## 🌐 Connect & Collaborate
 
 💼 Feel free to reach out at [www.linkedin.com/in/altamash-jawed-62b6231b7](https://www.linkedin.com/in/altamash-jawed-62b6231b7) for feedback, collaborations, or opportunities in DevOps & Cloud Engineering 🚀
