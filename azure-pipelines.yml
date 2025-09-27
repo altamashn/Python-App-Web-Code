@@ -5,14 +5,26 @@ pool:
   vmImage: ubuntu-latest
 
 stages:
-  - stage: 'DockerBuildAndPush'
-    displayName: "Build and Push Docker Image"
+  - stage: 'DevDockerBuildAndPush'
+    displayName: "Build and Push Docker Image to Dev"
     jobs: 
-      - job: 'Docker_Build_Push'
+      - job: 'Dev_Docker_Build_Push'
         steps:
           - task: Docker@2
             inputs:
-              containerRegistry: 'dockerreg'
+              containerRegistry: 'docker-dev-svc'
+              repository: 'pythonrepo'
+              command: 'buildAndPush'
+              Dockerfile: '**/Dockerfile'
+              tags: 'latest'
+  - stage: 'ProdDockerBuildAndPush'
+    displayName: 'Build and Push Docker Image to Prod'
+    jobs:
+      - job: 'Prod_Docker_Build_Push'
+        steps:
+          - task: Docker@2
+            inputs:
+              containerRegistry: 'docker-prod-svc'
               repository: 'pythonrepo'
               command: 'buildAndPush'
               Dockerfile: '**/Dockerfile'
